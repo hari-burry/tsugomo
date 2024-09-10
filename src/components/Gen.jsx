@@ -18,7 +18,9 @@ function Gen(){
       fileRef.current.click();
    }
    const handlechange=(event)=>{
-       setChosen(false);
+       setChosen(null);
+       setFile(null);
+       setRes(null);
        if(event.target.files.length>0){
          const selectedfile=event.target.files[0];
          setFile(selectedfile);
@@ -65,12 +67,12 @@ function Gen(){
      <div className='bg-black min-h-[91vh] pt-3'>
       <h1 className='text-white text-xl mt-6 font-semibold ml-5 font-Montserrat animate-gapout '>PSR Image Enhancement</h1>
       <div className=' mx-auto w-[97vw] h-[6vh] mt-1 mb-4 flex items-center justify-between animate-gapout'>
-      <h2 className='inline-block text-white text-lg font-normal font-Montserrat'>Upload an Image of the Permanently Shadowed Region(PSR) to enhance its visibility</h2>
+      <h2 className='inline-block text-white text-lg font-normal font-Montserrat'>Upload an Image to enhance it </h2>
       {btn &&
-        <>
-     <button onClick={handleclick} className='animate-gapout2 hover:bg-stone-700 inline-block bg-stone-800 w-[17vw] ml-9 text-white ease-in duration-150 hover:text-white active:font-bold  rounded-full border border-transparent py-2 font-semibold active:duration-0' >Choose a different Image</button>
+        <div>
+     <button onClick={handleclick} className='animate-gapout2 hover:bg-stone-700 inline-block bg-stone-800 w-[17vw] mr-4 text-white ease-in duration-150 hover:text-white active:font-bold  rounded-full border border-transparent py-2 font-semibold active:duration-0' >Choose a different Image</button>
      <button onClick={fetchdata} className='animate-gapout2 inline-block bg-stone-800 w-[15vw] text-white ease-in duration-150  hover:text-white active:font-bold hover:bg-stone-700 rounded-full border border-transparent py-2 font-semibold active:duration-0'>Generate Image</button>
-     </>
+     </div>
         }
         </div>
       <div className=' mt-2 w-[97vw] mx-auto flex justify-between animate-gapout'>

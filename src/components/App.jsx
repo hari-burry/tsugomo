@@ -11,6 +11,9 @@ function App(){
     const gosol=()=>{
         navigate('/solution');
     }
+    const goabt=()=>{
+        navigate('/about');
+    }
     const [hov1,setHov1]=useState(false);
     const [hov2,setHov2]=useState(false);
     const [hov3,setHov3]=useState(false);
@@ -37,11 +40,16 @@ function App(){
       <h2 className='transition duration-200 cursor-pointer text-white font-Montserrat  text-xl'>Solution</h2> 
       {hov2 &&<hr className='bg-white w-16 mx-auto '></hr>}
       </div >
+      <div onClick={goabt} onMouseEnter={()=>setHov3(true)}  onMouseOut={()=>setHov3(false)}>
+      <h2 className=' cursor-pointer text-white font-Montserrat ml-2 text-xl'>Challenges</h2>
+      {hov3 && <hr className='bg-white w-20 mx-auto '></hr>}
       </div>
-      <div onMouseEnter={()=>setHov4(true)}  onMouseOut={()=>setHov4(false)}>
+      </div>
+      <div onClick={goabt} onMouseEnter={()=>setHov4(true)} className='mr-[2vw]'  onMouseOut={()=>setHov4(false)}>
       <h2 className=' cursor-pointer text-white font-Montserrat ml-2 text-xl'>About</h2>
       {hov4 && <hr className='bg-white w-16 mx-auto '></hr>}
-      </div>
+      </div> 
+
            </header>
            </div>
            
